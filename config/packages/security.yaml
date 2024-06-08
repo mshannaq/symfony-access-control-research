@@ -14,6 +14,11 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            form_login:
+                login_path: app_admin_login
+                check_path: app_admin_login
+            logout:
+                path: /admin/logout
             lazy: true
             provider: app_user_provider
 
@@ -28,6 +33,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/backend, roles: ROLE_ADMIN }
+
 
 when@test:
     security:
