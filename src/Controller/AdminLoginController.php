@@ -18,7 +18,7 @@ class AdminLoginController extends AbstractController
             // Check if the user is an admin
             if (in_array('ROLE_ADMIN', $this->getUser()->getRoles())) {
                 //@TODO you have to define the backend_dashboard route or you will get error
-                return $this->redirectToRoute('backend_dashboard');
+                return $this->redirectToRoute('app_backend');
             }
             // If not an admin, redirect to the main route
             //@TODO you have to define the site_index route or you will get error
